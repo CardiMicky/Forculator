@@ -1,0 +1,79 @@
+:root {
+  --bg: #000000;
+  --text: #ffffff;
+  --light: #a5a5a5;
+  --dark: #333333;
+  --orange: #ff9f0a;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  display: grid;
+  place-items: center;
+}
+.app {
+  width: 100%;
+  max-width: 420px;
+  padding: 16px 16px 24px;
+}
+.top-actions {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+.top-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  border: none;
+  background: #1a1a1a;
+  color: #d1d1d1;
+  font-size: 18px;
+  line-height: 36px;
+}
+.display {
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 8px 8px 16px;
+}
+.expression {
+  font-size: 18px;
+  color: #a6a6a6;
+  min-height: 22px;
+}
+.result {
+  font-size: 64px;
+  font-weight: 300;
+}
+.pad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.btn {
+  height: 72px;
+  border-radius: 36px;
+  border: none;
+  font-size: 28px;
+  color: var(--text);
+}
+.btn.light { background: var(--light); color: #000000; }
+.btn.dark { background: var(--dark); }
+.btn.op { background: var(--orange); color: #ffffff; }
+.zero {
+  grid-column: span 2;
+  text-align: left;
+  padding-left: 28px;
+}
+@media (max-width: 360px) {
+  .btn { height: 64px; font-size: 24px; border-radius: 32px; }
+  .result { font-size: 52px; }
+}
