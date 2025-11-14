@@ -90,6 +90,11 @@ function evaluate() {
   justEvaluated = true;
 }
 
+navigator.serviceWorker.register('/sw.js')
+  .then(registration => {
+    console.log('SW scope:', registration.scope);
+  });
+
 document.querySelectorAll("[data-num]").forEach(b =>
   b.addEventListener("click", () => inputDigit(b.getAttribute("data-num")))
 );
@@ -159,5 +164,6 @@ document.addEventListener('keydown', (e) => {
     }
   }
 });
+
 
 setCurrent(current);
